@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+.ipynb_checkpoints/
+
+# Terraform
+infra/.terraform/
+infra/*.tfstate
+infra/*.tfstate.*
+infra/terraform.tfvars
+infra/.terraform.lock.hcl
+
+# Kube / secrets
+kubeconfig*
+*.kubeconfig
+
+# OS
+.DS_Store

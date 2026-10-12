@@ -1,0 +1,30 @@
+# Python dependencies for the workshop notebooks.
+# Python 3.11+ recommended.
+#
+# In Path A (the hosted workshop) the platform installs this file into your
+# JupyterLab environment at startup. In Path B (your own environment) install with:
+#   pip install -r requirements.txt
+#
+# Keep this list LIGHT: it is installed into the CPU-only notebook pod, which is
+# small. Tooling for producing quantized model artifacts belongs in optional
+# follow-up material, not the main workshop environment.
+
+# LLM client: the OpenAI SDK pointed at your vLLM OpenAI-compatible endpoint.
+openai>=1.40
+
+# Scraping the vLLM /metrics endpoint (parsed by hand in common/metrics.py).
+requests>=2.31
+
+# Plots for throughput, latency, and KV cache curves.
+matplotlib>=3.8
+
+# Notebook tooling.
+jupyterlab>=4.0
+nbformat>=5.10
+
+# Installed on demand, NOT here:
+#   vllm           the inference server and the `vllm bench serve` load tool. Ships in
+#                  the GPU image the platform provides; the notebooks fall back to a
+#                  pure-Python load generator (common/load.py) when it is absent.
+#   guidellm       richer benchmarking, the deeper option in section 08.
+#                  Install with `pip install guidellm` if you want to run it.
